@@ -94,30 +94,6 @@ class GetDataPlugin{
         }
     }
 
-    function java($get){
-        $data='<script type="text/javascript">';
-        switch ($get) {
-            case 'height':
-                $data.='document.write(window.screen.height);</script>';
-                break;
-            case 'width':
-                $data.='document.write(window.screen.width);</script>';
-                break;
-            case 'javaenabled':
-                $data.='if(navigator.javaEnabled()==true){document.write("true")}else{document.write("false")}</script>';
-                break;
-            case 'cookieenabled':
-                $data.='if(navigator.cookieEnabled==true){document.write("true")}else{document.write("false")}</script>';
-                break;
-        }
-        return $data;
-    }
-
-    function height(){return file_get_contents(REAL."?execute=height");}
-    function width(){return file_get_contents(REAL."?execute=width");}
-    function javaenabled(){return file_get_contents(REAL."?execute=javaenabled");}
-    function cookieenabled(){return file_get_contents(REAL."?execute=cookieenabled");}
-
     function ip(){
         if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             $ipAddresses = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);

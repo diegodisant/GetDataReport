@@ -6,7 +6,7 @@ error_log(0);
 $HTTP_S = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
 $path = dirname(__FILE__);
 $position = basename($path);
-$real_path =  $HTTP_S.$_SERVER['HTTP_HOST']."/".$position."/".basename(__FILE__);
+$real_path =  $HTTP_S.$_SERVER['HTTP_HOST'];
 define("REAL", $real_path);
 
 class GetDataPlugin{

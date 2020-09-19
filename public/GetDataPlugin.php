@@ -81,6 +81,8 @@ class GetDataPlugin{
 
         $g = unserialize($serializedResponse);
 
+        var_dump($g);
+
         switch ($what) {
             case 'country':
                 return $g['geoplugin_countryName'];

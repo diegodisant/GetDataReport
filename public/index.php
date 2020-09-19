@@ -13,7 +13,6 @@ echo "<br>Operative System ".$data->os();
 echo "<br>Browser          ".$data->browser();
 echo "<br>Language         ".$data->language();
 echo "<br>Architecture     ".$data->architecture();
-echo "<br>Device           ".$data->device();
 echo "<br>Country          ".$data->geo('country');
 echo "<br>Region           ".$data->geo('region');
 echo "<br>Continent        ".$data->geo('continent');

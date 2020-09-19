@@ -1,5 +1,6 @@
 <?php
 
+include('../vendor/autoload.php');
 include("./GetDataPlugin.php");
 
 echo "<h1>Redireccionador de noticias externo del Imparcial Oaxaca</h1>";

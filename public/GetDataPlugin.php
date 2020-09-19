@@ -68,11 +68,14 @@ class GetDataPlugin{
         elseif(strstr($unix, 'IPOD')==true)       {$device="Portable media players ";}return $device;}
 
     function geo($what){
-        $g = unserialize(
-            file_get_contents(
-                'http://www.geoplugin.net/php.gp\?ip\='.$_SERVER['REMOTE_ADDR'].''
-            )
+        $client = new GuzzleHttp\Client();
+
+        $response = $client->request(
+            'GET',
+            'http://www.geoplugin.net/php.gp?ip='.$_SERVER['REMOTE_ADDR']
         );
+
+        $g = unserialize($response->getBody());
 
         switch ($what) {
             case 'country':

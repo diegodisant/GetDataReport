@@ -75,7 +75,7 @@ class GetDataPlugin{
             'http://www.geoplugin.net/php.gp?ip='.$_SERVER['REMOTE_ADDR']
         );
 
-        $g = unserialize($response->getBody());
+        $g = unserialize($response->getBody()->getContents());
 
         switch ($what) {
             case 'country':
